@@ -97,7 +97,12 @@ img
    <h2>Shalom Travel</h2>
 
 
+
 </div>
+
+
+
+
     <div class="container">
         <button class="btn btn-primary my-5 btn-sm"><a href="create.php" class="text-light">ADD A CUSTOMER</a></button>
 
@@ -152,7 +157,6 @@ GROUP BY issuedate";
                             $ap=$row['ap'];
                             $vendorcom=$row['vendorcom'];
                             $totals=$row['totals'];
-                            //$shalomcom=$row['shalomcom'];
                             $bank=$row['bank'];
                           
                            
@@ -205,7 +209,7 @@ GROUP BY issuedate";
 		$total_qty=0;
  
 		
-		$query=$con->query("SELECT SUM(ar-ap) AS totals from shalom2 ");
+		$query=$con->query("SELECT SUM(ar-ap) AS totals from shalom2 GROUP BY issuedate ");
 		while($row=$query->fetch_array()) {
 			?>
 				
@@ -215,6 +219,7 @@ GROUP BY issuedate";
 ?>
 	<tr>
 		<td colspan="10">TOTAL</td>
+        
 		<td><?php echo $total_qty; ?></td>
  
 	</tr>
