@@ -4,7 +4,7 @@
 
 $con = new PDO("mysql:host=localhost;dbname=shalomdb", "root", "");
 
-$column = array('ticketnumber', 'invno', 'company', 'fullname','destination','issuedate','fare','ar','ap','vendorcom','shalomcom','bank');
+$column = array('ticketnumber', 'invno', 'company', 'fullname','destination','issuedate','fare','ar','ap','vendorcom','bank');
 
 $query = '
 
@@ -54,7 +54,7 @@ $result = $statement->fetchAll();
 
 $data = array();
 
-$shalomcom = 0;
+$total_order = 0;
 
 foreach ($result as $row) {
 
@@ -73,7 +73,7 @@ foreach ($result as $row) {
     $sub_array[] = $row["shalomcom"];
     $sub_array[] = $row["bank"];
 
-    $shalomcom = $row['shalomcom'];
+    $total_order= $total_order + floatval($row["shalomcom"]);
 
     $data[] = $sub_array;
 
@@ -103,7 +103,7 @@ $output = array(
 
     'data'    => $data,
 
-    'shalomcom'    => number_format($shalomcom, 2)
+    'total'    => number_format($total_order, 2)
 
 );
 

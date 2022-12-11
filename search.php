@@ -76,7 +76,7 @@ text-align:center;
 
        <th colspan="10">TOTAL</th>
 
-       <th id="shalomcom"></th>
+       <th id="total_order"></th>
 
       </tr>
 
@@ -125,7 +125,7 @@ text-align:center;
 
     {
 
-     $('#shalomcom').html(settings.json.shalomcom);
+     $('#total_order').html(settings.json.total);
 
     }
 
