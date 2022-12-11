@@ -80,6 +80,16 @@ if($result){
 
   <body>
 
+  
+<img src="logo.png" width="200px" height="200px" alt="">
+
+
+
+<h2>Shalom Travel</h2>
+
+
+</div>
+
   <h2>Update A Customer</h2>
   <div class="container my-5">
 
@@ -150,9 +160,12 @@ if($result){
                                 <label for="">Vendor</label>
                                 <select name="vendorcom" class="form-control">
                                     <option value="">--Select a Vendor--</option>
-                                    <option value="Ethiopian Airlines">Ethiopian Airlines</option>
+                                    <option value="Bader Airlines ">Bader Airlines</option>
                                     <option value="Dawe Emede">Dawe Emede</option>
+                                    <option value="Ethiopian Airlines">Ethiopian Airlines</option>
+                                    <option value="Fly Dubai">Fly Dubai</option>
                                     <option value="Four Winds ">Four Winds</option>
+                                    <option value="Jezeera Airlines">Jezeera Airlines</option>
 
                                 </select>
                             </div>

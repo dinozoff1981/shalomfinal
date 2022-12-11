@@ -95,16 +95,7 @@ img
 
 
    <h2>Shalom Travel</h2>
-<div class="topnav">
-   <tr>
 
-<td>
-<button class="btn btn-primary btn-sm"><a href="search.php" class="text-light">Find By Ticket #</a></button>
-<button class="btn btn-primary btn-sm"><a href="search1.php" class="text-light">Find By Name</a></button>
-<button class="btn btn-primary btn-sm"><a href="#" class="text-light">Find By Company</a></button>
-
-</td>
-</tr>
 
 </div>
     <div class="container">
