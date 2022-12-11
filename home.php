@@ -221,7 +221,7 @@ GROUP BY issuedate";
 			<?php 
 			$total_qty += $row['totals'];
 		}
-	?>
+?>
 	<tr>
 		<td colspan="10">TOTAL</td>
 		<td><?php echo $total_qty; ?></td>
