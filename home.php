@@ -97,7 +97,7 @@ img
    <h2>Shalom Travel</h2>
 
 
-</div>
+
     <div class="container">
         <button class="btn btn-primary my-5 btn-sm"><a href="create.php" class="text-light">ADD A CUSTOMER</a></button>
 
@@ -232,7 +232,7 @@ GROUP BY issuedate";
     <div class="container">
         <button class="btn btn-danger my-5"><a href="logout.php" class="text-light">Log Out</a></button>
 
-
+    </div>
 </body>
 
 </html>
