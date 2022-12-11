@@ -9,10 +9,10 @@ if(!$con){
 }
 
 
-//$con=new mysqli("localhost","root","","shalomdb");
+$con=new mysqli("localhost","root","","shalomdb");
 
-//if(!$con){
-   //die('Connection Failed'. mysqli_connect_error($con));
-//}
+if(!$con){
+   die('Connection Failed'. mysqli_connect_error($con));
+}
 
 ?>
