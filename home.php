@@ -137,7 +137,7 @@ img
 $sql = "SELECT 
 ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, 
 sum(ar-ap) as shalomcom,bank FROM shalom2
-GROUP BY ticketnumber";
+GROUP BY issuedate";
                 
                 //$sql="SELECT * FROM  shalom2";
                 
