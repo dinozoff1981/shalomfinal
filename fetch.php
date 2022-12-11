@@ -70,10 +70,10 @@ foreach ($result as $row) {
     $sub_array[] = $row["ar"];
     $sub_array[] = $row["ap"];
     $sub_array[] = $row["vendorcom"];
-    $sub_array[] = $row["shalomcom"];
+    $sub_array[] = $row["totals"];
     $sub_array[] = $row["bank"];
 
-    $total_order= $total_order + floatval($row["shalomcom"]);
+    $total_order= $total_order + floatval($row["totals"]);
 
     $data[] = $sub_array;
 
@@ -82,8 +82,11 @@ foreach ($result as $row) {
 function count_all_data($con)
 
 {
-
-    $query = "SELECT * FROM shalom2";
+    $query  = "SELECT 
+    ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, 
+    sum(ar-ap) as totals,bank FROM shalom2
+    GROUP BY issuedate";
+    //$query = "SELECT * FROM shalom2";
 
     $statement = $con->prepare($query);
 
@@ -97,7 +100,7 @@ $output = array(
 
     'draw'    => intval($_POST["draw"]),
 
-    'recordsshalomcom'  => count_all_data($con),
+    'recordstotals'  => count_all_data($con),
 
     'recordsFiltered' => $number_filter_row,
 

@@ -50,7 +50,7 @@ text-align:center;
 
       <tr>
 
-      <th scope="col">Ticket Number</th>
+                    <th scope="col">Ticket Number</th>
                     <th scope="col">Invoice#</th>
                     <th scope="col">Company</th>
                     <th scope="col">Full Name</th>

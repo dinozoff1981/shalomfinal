@@ -134,9 +134,9 @@ img
 
                 <?php
                 include 'connect.php';
-$sql = "SELECT 
+$sql = "SELECT  
 ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, 
-sum(ar-ap) as shalomcom,bank FROM shalom2
+sum(ar-ap) as totals,bank FROM shalom2
 GROUP BY issuedate";
                 
                 //$sql="SELECT * FROM  shalom2";
@@ -160,15 +160,16 @@ GROUP BY issuedate";
                             $ar=$row['ar'];
                             $ap=$row['ap'];
                             $vendorcom=$row['vendorcom'];
-                            $shalomcom=$row['shalomcom'];
+                            $totals=$row['totals'];
+                            //$shalomcom=$row['shalomcom'];
                             $bank=$row['bank'];
                           
                            
                           
 
-                            echo ' <tr>
+                            echo  ' <tr>
                             <th scope="row">'.$ticketnumber.'</th>
-                            <td>'.$invno.'</td>
+                            <td> '.$invno.'</td>
                             <td>'.$company.'</td>
                             <td>'.$fullname.'</td>
                             <td>'.$destination.'</td>
@@ -177,8 +178,9 @@ GROUP BY issuedate";
                             <td>'.$ar.'</td>
                             <td>'.$ap.'</td>
                             <td>'.$vendorcom.'</td>
-                            <td>'.$shalomcom.'</td>
-                            <td>'.$bank.'</td>
+                            <td>'.$totals.'</td>
+                            
+                            <td>'.$bank.'</td> 
                            
                             
                             
