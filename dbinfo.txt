@@ -1,0 +1,13 @@
+You have successfully created a new database. The details are below.
+
+Username: freedb_tensae
+
+Database name: freedb_shalomdb
+
+Password: m%wFa#8hNwgpY6z
+
+Server: sql.freedb.tech
+
+Port: 3306
+
+adress- https://freedb.tech/dashboard/index.php
