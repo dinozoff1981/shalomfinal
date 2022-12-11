@@ -167,7 +167,7 @@ GROUP BY issuedate";
                            
                           
 
-                            echo  ' <tr>
+                            echo ' <tr>
                             <th scope="row">'.$ticketnumber.'</th>
                             <td> '.$invno.'</td>
                             <td>'.$company.'</td>
@@ -206,6 +206,34 @@ GROUP BY issuedate";
 
 
             </tbody>
+
+<tfoot>
+
+
+<?php
+		$total_qty=0;
+ 
+		
+		$query=$con->query("SELECT SUM(ar-ap) AS totals from shalom2 ");
+		while($row=$query->fetch_array()) {
+			?>
+				
+			<?php 
+			$total_qty += $row['totals'];
+		}
+	?>
+	<tr>
+		<td colspan="10">TOTAL</td>
+		<td><?php echo $total_qty; ?></td>
+ 
+	</tr>
+
+
+
+
+</tfoot>
+
+            
         </table> 
 
     </div>
