@@ -1,7 +1,7 @@
 <?php
 
 
-$con=new mysqli("sql.freedb.tech","freedb_tensae","6Ssqn7ab#T%7PeH","freedb_shalomdb");
+$con=new mysqli("sql.freedb.tech","freedb_dinos","6Ssqn7ab#T%7PeH","freedb_shalomdb");
 
 
 if(!$con){
