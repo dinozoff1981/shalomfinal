@@ -152,7 +152,6 @@ GROUP BY issuedate";
                             $ap=$row['ap'];
                             $vendorcom=$row['vendorcom'];
                             $totals=$row['totals'];
-                            //$shalomcom=$row['shalomcom'];
                             $bank=$row['bank'];
                           
                            
