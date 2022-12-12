@@ -127,7 +127,11 @@ img
   <body>
 
   <img src="logo.png" width="200px" height="200px" alt="">
-  <h2>New Customer</h2>
+
+  <h2>Shalom Travel</h2>
+
+   <h2>New Customer</h2>
+
 <div class="container my-5">
 
     <form method="POST">

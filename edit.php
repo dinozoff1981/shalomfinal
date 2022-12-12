@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
     //$shalomcom=$_POST['shalomcom'];
     $bank=$_POST['bank'];
 
-$sql="UPDATE  shalom2 SET ticketnumber=$ticketnumber,ticketnumber='$ticketnumber', invno='$invno',company='$company',fullname='$fullname',destination='$destination',issuedate='$issuedate',fare='$fare',ar='$ar',ap='$ap',vendorcom='$vendorcom',bank='$bank' WHERE ticketnumber=$ticketnumber";
+$sql="UPDATE  shalom2 SET ticketnumber=$ticketnumber,invno='$invno',company='$company',fullname='$fullname',destination='$destination',issuedate='$issuedate',fare='$fare',ar='$ar',ap='$ap',vendorcom='$vendorcom',bank='$bank' WHERE ticketnumber=$ticketnumber";
 
 $result=mysqli_query($con,$sql);
 
