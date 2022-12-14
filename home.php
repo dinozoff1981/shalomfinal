@@ -205,11 +205,11 @@ GROUP BY issuedate";
       
  
 		
-		$query=$con->query("SELECT SUM(ar-ap) AS totals from shalom2 ");
+		$query=$con->query("SELECT SUM(ar-ap) AS totals from shalom2");
 		while($row=$query->fetch_array()) {
-			?>
+	?>
 				
-			<?php 
+	<?php 
 			$total_qty += $row['totals'];
          
 		}
