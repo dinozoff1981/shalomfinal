@@ -14,7 +14,6 @@ $fare=$_POST['fare'];
 $ar=$_POST['ar'];
 $ap=$_POST['ap'];
 $vendorcom=$_POST['vendorcom'];
-//$shalomcom=$_POST['shalomcom'];
 $bank=$_POST['bank'];
 
 
@@ -52,7 +51,6 @@ if(isset($_POST['more'])){
   $ar=$_POST['ar'];
   $ap=$_POST['ap'];
   $vendorcom=$_POST['vendorcom'];
-  //$shalomcom=$_POST['shalomcom'];
   $bank=$_POST['bank'];
   
 
@@ -125,11 +123,9 @@ img
 </style> 
 
   <body>
-
-  <img src="logo.png" width="200px" height="200px" alt="">
-
-  <h2>Shalom Travel</h2>
-
+<?php
+ include 'header.php';
+?>
    <h2>New Customer</h2>
 
 <div class="container my-5">

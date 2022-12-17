@@ -1,6 +1,7 @@
 
 <?php
 include 'connect.php';
+
 $ticketnumber=$_GET['updateid'];
 
 
@@ -20,7 +21,6 @@ $fare=$row['fare'];
 $ar=$row['ar'];
 $ap=$row['ap'];
 $vendorcom=$row['vendorcom'];
-//$shalomcom=$row['shalomcom'];
 $bank=$row['bank'];
 
 if(isset($_POST['submit'])){
@@ -35,10 +35,9 @@ if(isset($_POST['submit'])){
     $ar=$_POST['ar'];
     $ap=$_POST['ap'];
     $vendorcom=$_POST['vendorcom'];
-    //$shalomcom=$_POST['shalomcom'];
     $bank=$_POST['bank'];
 
-$sql="UPDATE  shalom2 SET ticketnumber=$ticketnumber,invno='$invno',company='$company',fullname='$fullname',destination='$destination',issuedate='$issuedate',fare='$fare',ar='$ar',ap='$ap',vendorcom='$vendorcom',bank='$bank' WHERE ticketnumber=$ticketnumber";
+$sql="UPDATE  shalom2 SET ticketnumber='$ticketnumber',invno='$invno',company='$company',fullname='$fullname',destination='$destination',issuedate='$issuedate',fare='$fare',ar='$ar',ap='$ap',vendorcom='$vendorcom',bank='$bank' WHERE ticketnumber=$ticketnumber";
 
 $result=mysqli_query($con,$sql);
 
@@ -80,15 +79,9 @@ if($result){
 
   <body>
 
-  
-<img src="logo.png" width="200px" height="200px" alt="">
-
-
-
-<h2>Shalom Travel</h2>
-
-
-</div>
+ <?php
+include 'header.php';
+ ?>
 
   <h2>Update A Customer</h2>
   <div class="container my-5">
@@ -98,7 +91,7 @@ if($result){
 
         <div class="mb-3">
         <label >Ticket Number</label>
-        <input type="text" class="form-control" placeholder="Ticket Number" name="ticketnumber" value=<?php echo $ticketnumber;?>>
+        <input type="number" class="form-control" placeholder="Ticket Number" name="ticketnumber" value=<?php echo $ticketnumber;?>>
 
         </div>
 

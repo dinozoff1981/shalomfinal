@@ -130,7 +130,7 @@ img
                 include 'connect.php';
 $sql = "SELECT  
 ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, 
-sum(ar-ap) as totals,bank FROM shalom2
+sum(ar-ap),sum(ar),sum(ap) as totals,bank FROM shalom2
 GROUP BY issuedate";
                 
                 //$sql="SELECT * FROM  shalom2";

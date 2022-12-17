@@ -80,6 +80,7 @@ img
     
 }
 
+
 .topnav{
 
     display: flexbox;
@@ -87,16 +88,23 @@ img
     margin-left: 360px;
 }
 
+#footer td{
+
+    color:red;
+    font-size:13px;
+    font-weight: bold;
+ 
+    
+}
+
 </style> 
 <body>
 
-<img src="logo.png" width="200px" height="200px" alt="">
 
 
-
-   <h2>Shalom Travel</h2>
-
-
+<?php
+include 'header.php';
+?>
 
 
 <div class="container">
@@ -132,8 +140,8 @@ img
                 <?php
                 include 'connect.php';
 $sql = "SELECT  
-ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, 
-sum(ar-ap) as totals,bank FROM shalom2
+ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, sum(ar) as artotal, sum(ap) as aptotal,
+sum(ar-ap) as totals, bank FROM shalom2
 GROUP BY issuedate";
                 
                 //$sql="SELECT * FROM  shalom2";
@@ -203,27 +211,42 @@ GROUP BY issuedate";
 
             </tbody>
 
-<tfoot>
+<tfoot id="footer">
 
 
 <?php
 		$total_qty=0;
+        $total_qty1=0;
+        $total_qty2=0;
       
  
 		
-		$query=$con->query("SELECT SUM(ar-ap) AS totals from shalom2");
+		$query=$con->query("SELECT SUM(ar-ap) AS totals,sum(ar) AS artotal,sum(ap) AS aptotal from shalom2");
 		while($row=$query->fetch_array()) {
 	?>
 				
 	<?php 
-			$total_qty += $row['totals'];
+			$total_qty = $row['totals'];
+            $total_qty2 = $row['aptotal'];
+            $total_qty1 = $row['artotal'];
+           
          
 		}
 ?>
 	<tr>
-		<td colspan="10">TOTAL</td>
-      
-		<td><?php echo $total_qty; ?></td>
+		<td>TOTAL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><?php echo $total_qty1; ?></td>
+        <td><?php echo $total_qty2; ?></td> 
+        <td></td>
+        <td><?php echo $total_qty; ?></td>
+        
+       
  
 	</tr>
 
