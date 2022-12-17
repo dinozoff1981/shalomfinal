@@ -98,6 +98,12 @@ img
 
 
 
+
+<div class="container">
+<button onclick="window.print();" class="btn btn-danger">PRINT</button>
+</div>
+
+</div>
     <div class="container">
         <button class="btn btn-primary my-5 btn-sm"><a href="create.php" class="text-light">ADD A CUSTOMER</a></button>
 
@@ -229,7 +235,7 @@ GROUP BY issuedate";
             
         </table> 
 
-    </div>
+        
 
     <div class="container">
         <button class="btn btn-danger my-5"><a href="logout.php" class="text-light">Log Out</a></button>
