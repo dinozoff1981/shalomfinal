@@ -201,7 +201,7 @@ GROUP BY issuedate";
 
 
 <?php
-		$totals=0;
+		$total_qty=0;
       
  
 		
@@ -210,14 +210,14 @@ GROUP BY issuedate";
 	?>
 				
 	<?php 
-			$totals+= $row['totals'];
+			$total_qty += $row['totals'];
          
 		}
 ?>
 	<tr>
 		<td colspan="10">TOTAL</td>
       
-		<td><?php echo $totals; ?></td>
+		<td><?php echo $total_qty; ?></td>
  
 	</tr>
 
