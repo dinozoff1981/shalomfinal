@@ -14,7 +14,7 @@ $fare=$_POST['fare'];
 $ar=$_POST['ar'];
 $ap=$_POST['ap'];
 $vendorcom=$_POST['vendorcom'];
-//$shalomcom=$_POST['shalomcom'];
+$totals=$_POST['totals'];
 $bank=$_POST['bank'];
 
 
@@ -25,8 +25,8 @@ $bank=$_POST['bank'];
 
 
 
-$sql="INSERT INTO  shalom2 (ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom,bank)".
-"VALUES ('$ticketnumber','$invno','$company','$fullname','$destination','$issuedate','$fare','$ar','$ap','$vendorcom','$bank')";
+$sql="INSERT INTO  shalom2 (ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom,totals,bank)".
+"VALUES ('$ticketnumber','$invno','$company','$fullname','$destination','$issuedate','$fare','$ar','$ap','$vendorcom','$totals','$bank')";
 $result=mysqli_query($con,$sql);
 
 if($result){
