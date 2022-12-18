@@ -140,9 +140,9 @@ include 'header.php';
                 <?php
                 include 'connect.php';
 $sql = "SELECT  
-ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, sum(ar) as artotal, sum(ap) as aptotal,
-sum(ar-ap) as totals, bank FROM shalom2
-GROUP BY issuedate";
+ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, SUM(ar) AS artotal, SUM(ap) AS aptotal,
+SUM(ar-ap) AS totals, bank FROM shalom2
+GROUP BY ticketnumber";
                 
                 //$sql="SELECT * FROM  shalom2";
                 
