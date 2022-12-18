@@ -221,7 +221,7 @@ GROUP BY issuedate";
       
  
 		
-		$query=$con->query("SELECT SUM(ar-ap) AS totals,sum(ar) AS artotal,sum(ap) AS aptotal from shalom2");
+		$query=$con->query("SELECT SUM(ar-ap) AS totals,sum(ar) AS artotal,sum(ap) AS aptotal FROM shalom2");
 		while($row=$query->fetch_array()) {
 	?>
 				

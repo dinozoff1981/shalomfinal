@@ -46,9 +46,7 @@ CREATE TABLE `shalom2` (
 -- Dumping data for table `shalom2`
 --
 
-INSERT INTO `shalom2` (`ticketnumber`, `invno`, `company`, `fullname`, `destination`, `issuedate`, `fare`, `ar`, `ap`, `vendorcom`, `totals`, `bank`) VALUES
-('1234658811', 'CSI-523532', 'tato dino', 'abebe', 'arn-add-arn', '2022-12-30', '2300.98', '2876467.00', '1000.00', 'Fly Dubai', NULL, 'Birhan Bank');
-COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
