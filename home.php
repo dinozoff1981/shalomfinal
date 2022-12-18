@@ -97,6 +97,11 @@ img
     
 }
 
+body{
+
+    align:center;
+}
+
 </style> 
 <body>
 
