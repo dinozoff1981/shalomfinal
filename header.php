@@ -24,9 +24,5 @@
         font-weight:bold;
     }
 
-    .container1{
-
-       
-        text-align:center;
-    }
+  
 </style>
