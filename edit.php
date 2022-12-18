@@ -2,11 +2,11 @@
 <?php
 include 'connect.php';
 
-$ticketnumber=$_GET['updateid'];
+$id=$_GET['updateid'];
 
 
 
-$sql="SELECT * FROM  shalom2 WHERE ticketnumber=$ticketnumber";
+$sql="SELECT * FROM  shalom2 WHERE id=$id";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
 
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
     $vendorcom=$_POST['vendorcom'];
     $bank=$_POST['bank'];
 
-$sql="UPDATE  shalom2 SET ticketnumber='$ticketnumber',invno='$invno',company='$company',fullname='$fullname',destination='$destination',issuedate='$issuedate',fare='$fare',ar='$ar',ap='$ap',vendorcom='$vendorcom',bank='$bank' WHERE ticketnumber=$ticketnumber";
+$sql="UPDATE  shalom2 SET ticketnumber='$ticketnumber',invno='$invno',company='$company',fullname='$fullname',destination='$destination',issuedate='$issuedate',fare='$fare',ar='$ar',ap='$ap',vendorcom='$vendorcom',bank='$bank' WHERE id=$id";
 
 $result=mysqli_query($con,$sql);
 

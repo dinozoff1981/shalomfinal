@@ -140,9 +140,9 @@ include 'header.php';
                 <?php
                 include 'connect.php';
 $sql = "SELECT  
-ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, SUM(ar) AS artotal, SUM(ap) AS aptotal,
+id,ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, SUM(ar) AS artotal, SUM(ap) AS aptotal,
 SUM(ar-ap) AS totals, bank FROM shalom2
-GROUP BY ticketnumber";
+GROUP BY id";
                 
                 //$sql="SELECT * FROM  shalom2";
                 
@@ -154,7 +154,7 @@ GROUP BY ticketnumber";
                     
 
                     while($row=mysqli_fetch_assoc($result)){
-                           
+                        $id=$row['id'];
                             $ticketnumber=$row['ticketnumber'];
                             $invno=$row['invno'];
                             $company=$row['company'];
@@ -190,8 +190,8 @@ GROUP BY ticketnumber";
                             
 
                             <td>
-                             <button class="btn btn-primary btn-sm"><a href="edit.php?updateid='.$ticketnumber.'" class="text-light">Update</a></button>
-                             <button class="btn btn-danger btn-sm"><a href="delete.php?deleteid='.$ticketnumber.'" class="text-light">Delete</a></button>
+                             <button class="btn btn-primary btn-sm"><a href="edit.php?updateid='.$id.'" class="text-light">Update</a></button>
+                             <button class="btn btn-danger btn-sm"><a href="delete.php?deleteid='.$id.'" class="text-light">Delete</a></button>
 
 
                             </td>

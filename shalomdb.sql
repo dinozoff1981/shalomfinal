@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `shalom2` (
+  'id' INT (11) NOT NULL,
   `ticketnumber` varchar(100) NOT NULL,
   `invno` varchar(100) NOT NULL,
   `company` text NOT NULL,
@@ -38,6 +39,8 @@ CREATE TABLE `shalom2` (
   `ar` decimal(20,2) NOT NULL,
   `ap` decimal(20,2) NOT NULL,
   `vendorcom` varchar(50) NOT NULL,
+   `artotal` decimal(20,2) DEFAULT NULL,
+    `aptotal` decimal(20,2) DEFAULT NULL,
   `totals` decimal(20,2) DEFAULT NULL,
   `bank` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
