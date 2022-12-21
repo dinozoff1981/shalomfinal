@@ -56,29 +56,12 @@ font-family: 'Times New Roman', Times, serif;
 }
 th{
 
-    font-size: 12px;
+    font-size: 10px;
 }
 
-.table
 
-{
-display: flexbox;
-justify-content: center;
 
-margin-left: -40px;
 
-    
-}
-
-img
-
-{
-
-  
-   margin-top: 20px;
-   margin-left: 30px;
-    
-}
 
 
 .topnav{
