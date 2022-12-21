@@ -64,7 +64,7 @@ th{
 {
 display: flexbox;
 justify-content: center;
-width: 1300px;
+
 margin-left: -40px;
 
     
@@ -107,12 +107,14 @@ body{
 
 
 
-<?php
-include 'header.php';
-?>
+
 
 
 <div class="container">
+
+<?php
+include 'header.php';
+?>
 <button onclick="window.print();" class="btn btn-danger">PRINT</button>
 </div>
 
@@ -149,7 +151,7 @@ id,ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorco
 SUM(ar-ap) AS totals, bank FROM shalom2
 GROUP BY id";
                 
-                //$sql="SELECT * FROM  shalom2";
+               
                 
                 $result=mysqli_query($con,$sql);
 

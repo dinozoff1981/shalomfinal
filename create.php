@@ -123,12 +123,14 @@ img
 </style> 
 
   <body>
+
+
+<div class="container my-5">
+
 <?php
  include 'header.php';
 ?>
    <h2>New Customer</h2>
-
-<div class="container my-5">
 
     <form method="POST">
 

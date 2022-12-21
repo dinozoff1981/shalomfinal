@@ -79,12 +79,14 @@ if($result){
 
   <body>
 
- <?php
+
+  <div class="container my-5">
+
+  <?php
 include 'header.php';
  ?>
 
   <h2>Update A Customer</h2>
-  <div class="container my-5">
 
 <form method="POST">
 
