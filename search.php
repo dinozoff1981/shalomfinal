@@ -179,7 +179,11 @@ echo '<tbody>
 
 }
     
-  } 
+  } else{
+
+
+    echo '<h2 class=text-danger> DATA NOT FOUND!!!!</h2>';
+  }
 
 
   }
