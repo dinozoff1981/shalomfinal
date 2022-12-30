@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <title>Shalom Travel</title>
 
@@ -16,13 +17,7 @@
 
 <style>
 
-    tr
-    {
-
-        color:darkblue;
-        
-        
-    }
+   
 
     body
 
@@ -30,7 +25,6 @@
 
      background-color: white;
      
-
 
         
     }
@@ -52,14 +46,20 @@ tr
 font-size: 12px;
 text-align: center;
 font-family: 'Times New Roman', Times, serif;
+color:darkblue;
 
 }
 th{
 
     font-size: 10px;
+  
 }
 
+.table{
 
+    width:1300px;
+
+}
 
 
 
@@ -99,6 +99,8 @@ body{
 include 'header.php';
 ?>
 <button onclick="window.print();" class="btn btn-danger">PRINT</button>
+<button class="btn btn-dark my-5 "><a href="search.php" class="text-light">Search</a></button>
+
 </div>
 
 </div>
@@ -162,7 +164,7 @@ GROUP BY id";
                           
 
                             echo ' <tr>
-                            <th scope="row">'.$ticketnumber.'</th>
+                            <td scope="row">'.$ticketnumber.'</td>
                             <td> '.$invno.'</td>
                             <td>'.$company.'</td>
                             <td>'.$fullname.'</td>

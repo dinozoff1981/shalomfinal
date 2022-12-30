@@ -54,6 +54,7 @@ font-family: 'Times New Roman', Times, serif;
 th{
 
     font-size: 12px;
+    color:brown;
 }
 
 .table
@@ -99,8 +100,99 @@ img
 
 <?php
 include 'header.php';
+include 'connect.php';
 ?>
 
 
+<div class="container">
+        <button class="btn btn-primary my-5 btn-sm"><a href="home.php" class="text-light">GO TO MAIN</a></button>
+</div>
+
+<div class="container my-5">
+
+<form method="post">
+
+<input type="text" placeholder="Search Data" name="search">
+<button class="btn btn-dark btn-sm" name="submit">Search</button>
+
+</form>
+
+<div class="container my-5">
+<table class="table">
+
+<?php
+  if (isset($_POST['submit'])){
+$search=$_POST['search'];
+
+$sql = "SELECT  
+id,ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, SUM(ar) AS artotal, SUM(ap) AS aptotal,
+SUM(ar-ap) AS totals, bank FROM shalom2 
+WHERE id LIKE'%$search%' OR ticketnumber LIKE'%$search%' OR fullname LIKE'%$search%' OR company LIKE'%$search%' OR vendorcom LIKE'%$search%' OR issuedate LIKE'%$search%' GROUP BY id";
+                
+               
+                
+$result=mysqli_query($con,$sql);
+
+if($result){
+
+    if(mysqli_num_rows($result)>0){
+
+    echo '<thead>
+    <tr>
+        
+        <th scope="col">Ticket Number</th>
+        <th scope="col">Invoice# </th>
+        <th scope="col">Company</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Issue Date</th>
+        <th scope="col">Fare</th>
+        <th scope="col">A/R</th>
+        <th scope="col">A/P</th>
+        <th scope="col">Vendor</th>
+        <th scope="col">Shalom Comm</th>
+        <th scope="col">Bank</th>
+        
+    </tr>
+</thead>
+';
+
+while($row=mysqli_fetch_assoc($result)){
+
+echo '<tbody>
+ <tr>
+ <td>'.$row['ticketnumber'].'</td>
+ <td>'.$row['invno'].'</td>
+ <td>'.$row['company'].'</td>
+ <td>'.$row['fullname'].'</td>
+ <td>'.$row['destination'].'</td>
+ <td>'.$row['issuedate'].'</td>
+ <td>'.$row['fare'].'</td>
+ <td>'.$row['ar'].'</td>
+ <td>'.$row['ap'].'</td>
+ <td>'.$row['vendorcom'].'</td>
+ <td>'.$row['totals'].'</td>
+ <td>'.$row['bank'].'</td>
+ </tr>
+
+ </tbody>';
+
+}
+    
+  } 
+
+
+  }
+
+}
+
+?>
+
+
+</table>
+
+</div>
+
+</div>
 </body>
 </html>
