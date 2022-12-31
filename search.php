@@ -126,7 +126,7 @@ $search=$_POST['search'];
 
 $sql = "SELECT  
 id,ticketnumber,invno,company,fullname,destination,issuedate,fare,ar,ap,vendorcom, SUM(ar) AS artotal, SUM(ap) AS aptotal,
-SUM(ar-ap) AS totals, bank FROM shalom2 
+SUM(ar-ap) AS totals,sum(ar) AS artotal,sum(ap) AS aptotal, bank FROM shalom2 
 WHERE id LIKE'%$search%' OR ticketnumber LIKE'%$search%' OR fullname LIKE'%$search%' OR company LIKE'%$search%' OR vendorcom LIKE'%$search%' OR issuedate LIKE'%$search%' GROUP BY id";
                 
                
@@ -173,9 +173,14 @@ echo '<tbody>
  <td>'.$row['vendorcom'].'</td>
  <td>'.$row['totals'].'</td>
  <td>'.$row['bank'].'</td>
+ 
  </tr>
 
+
+
  </tbody>';
+
+
 
 }
     
@@ -193,7 +198,62 @@ echo '<tbody>
 ?>
 
 
+<tfoot id="footer">
+
+
+<?php
+		$total_qty=0;
+        $total_qty1=0;
+        $total_qty2=0;
+      
+ 
+		
+		$query=$con->query("SELECT SUM(ar-ap) AS totals,sum(ar) AS artotal,sum(ap) AS aptotal FROM shalom2");
+		while($row=$query->fetch_array()) {
+	?>
+				
+	<?php 
+			$total_qty =+ $row['totals'];
+            $total_qty2 =+ $row['aptotal'];
+            $total_qty1 =+ $row['artotal'];
+           
+         
+		}
+?>
+	<tr>
+		<td>TOTAL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><?php echo $total_qty1; ?></td>
+        <td><?php echo $total_qty2; ?></td> 
+        <td></td>
+        <td><?php echo $total_qty; ?></td>
+        
+       
+ 
+	</tr>
+
+
+
+
+</tfoot>
+
+
+
+
+
 </table>
+
+
+
+
+
+
+
 
 </div>
 
